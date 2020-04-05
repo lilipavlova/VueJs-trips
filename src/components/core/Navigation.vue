@@ -9,7 +9,7 @@
                         <a href="#">All trips</a>
                     </li>
                     <li>
-                        <a href="#">Create trip</a>
+                        <a href="#">Suggest trip</a>
                     </li>
                     <li>
                         <a href="#">Your wish list</a>

@@ -6,7 +6,8 @@
   
     <!-- <app-home></app-home>
     <app-login></app-login> -->
-    <app-registration></app-registration>
+    <!-- <app-registration></app-registration> -->
+    <app-createTrip></app-createTrip>
     </div>
 
     <app-footer></app-footer>
@@ -20,7 +21,8 @@ import tutorials from "./tutorials.json"
 import AppFooter from './components/core/Footer'
 import AppNavigation from "./components/core/Navigation"
 // import AppLogin from "./components/Authentication/Login"
-import AppRegistration from "./components/Authentication/Registration"
+// import AppRegistration from "./components/Authentication/Registration"
+import AppCreateTrip from "./components/trips/create-trip"
 
 export default {
   name: 'App',
@@ -29,7 +31,8 @@ export default {
     AppFooter,
     AppNavigation,
     // AppLogin,
-    AppRegistration
+    // AppRegistration
+    AppCreateTrip
   },
   data(){
     return {
