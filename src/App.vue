@@ -4,9 +4,9 @@
     <div class="main">
      <app-navigation></app-navigation>
   
-    <app-home></app-home>
-    <!-- <app-login></app-login>
-    <app-registration></app-registration> -->
+    <!-- <app-home></app-home>
+    <app-login></app-login> -->
+    <app-registration></app-registration>
     </div>
 
     <app-footer></app-footer>
@@ -16,20 +16,20 @@
 <script>
 import tutorials from "./tutorials.json"
 
-import AppHome from './components/Home'
+// import AppHome from './components/Home'
 import AppFooter from './components/core/Footer'
 import AppNavigation from "./components/core/Navigation"
 // import AppLogin from "./components/Authentication/Login"
-// import AppRegistration from "./components/Authentication/Registration"
+import AppRegistration from "./components/Authentication/Registration"
 
 export default {
   name: 'App',
   components: {
-    AppHome,
+    // AppHome,
     AppFooter,
     AppNavigation,
     // AppLogin,
-    // AppRegistration
+    AppRegistration
   },
   data(){
     return {

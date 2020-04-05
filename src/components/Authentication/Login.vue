@@ -5,7 +5,7 @@
                         <label for="login">Login</label>
                     </h2>
 
-                    <form class="user-form">
+                    <form class="user-form" @submit.prevent="submitHandler">
                         <div class="form-group">
                             <img src="https://img.icons8.com/material-sharp/42/000000/user.png">
                             <input type="text" name="username" placeholder="Username" v-model="email" @blur="$v.email.$touch">
@@ -50,8 +50,15 @@ export default {
     password: {
       required,
       minLength: minLength(6)
+      }
     },
-    },
+    methods: {
+    submitHandler() {
+      this.$v.$touch();
+      if (this.$v.$invalid) { return; }
+      console.log('Form was submitted!');
+    }
+}
 }
 </script>
 
