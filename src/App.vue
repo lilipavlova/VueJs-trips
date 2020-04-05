@@ -5,8 +5,8 @@
      <app-navigation></app-navigation>
   
     <app-home></app-home>
-    <app-login></app-login>
-    <app-registration></app-registration>
+    <!-- <app-login></app-login>
+    <app-registration></app-registration> -->
     </div>
 
     <app-footer></app-footer>
@@ -19,8 +19,8 @@ import tutorials from "./tutorials.json"
 import AppHome from './components/Home'
 import AppFooter from './components/core/Footer'
 import AppNavigation from "./components/core/Navigation"
-import AppLogin from "./components/Authentication/Login"
-import AppRegistration from "./components/Authentication/Registration"
+// import AppLogin from "./components/Authentication/Login"
+// import AppRegistration from "./components/Authentication/Registration"
 
 export default {
   name: 'App',
@@ -28,8 +28,8 @@ export default {
     AppHome,
     AppFooter,
     AppNavigation,
-    AppLogin,
-    AppRegistration
+    // AppLogin,
+    // AppRegistration
   },
   data(){
     return {
@@ -73,13 +73,13 @@ footer div {
 }
 
 footer .section-header {
-    border-bottom: 3px solid #44a9f8;
+    border-bottom: 3px solid #303440;
     margin: 1rem;
     color: white;
 }
 
 footer span {
-    background: #44a9f8;
+    background: #303440;
     color: white;
     font-size: 26px;
     border-radius: 6px 6px 0 0;
@@ -126,7 +126,7 @@ footer .svg-inline--fa {
 /** ************************************** **/
 
 .main div.navigation {
-    background: #44a9f8;
+    background: #303440;
     font-size: 20px;
     text-align: left;
     display: flex;
@@ -202,11 +202,11 @@ footer .svg-inline--fa {
 }
 
 .main div.main-content .content-navigation ul li:active {
-    border-right: 5px solid #44a9f8;
+    border-right: 5px solid #303440;
 }
 
 .main div.main-content .content-navigation ul li:nth-child(3) {
-    border-right: 5px solid #44a9f8;
+    border-right: 5px solid #303440;
 }
 
 .main div.main-content .content-navigation ul li a {
@@ -244,7 +244,7 @@ footer .svg-inline--fa {
 
 .main .content-info .user-form button {
     padding: 1%;
-    background: #44a9f8;
+    background: #303440;
     color: white;
     border: none;
     width: 10%;
@@ -260,12 +260,12 @@ footer .svg-inline--fa {
 }
 
 .main .content-info .user-links a:hover {
-    color: #44a9f8;
+    color: #303440;
     text-decoration: underline;
 }
 
 .main .content-info .user-links .active-route {
-    color: #44a9f8;
+    color: #303440;
     text-decoration: underline;
 }
 
@@ -273,7 +273,7 @@ footer .svg-inline--fa {
 
 .btn {
     padding: 1%;
-    background: #44a9f8;
+    background: #303440;
     color: white;
     border: none;
     width: 10%;
@@ -287,9 +287,9 @@ footer .svg-inline--fa {
 }
 
 .btn:hover {
-    color: #44a9f8;
+    color: #303440;
     background: white;
-    border: 1px solid #44a9f8;
+    border: 1px solid #303440;
     text-decoration: underline;
 }
 

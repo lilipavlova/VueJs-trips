@@ -21,7 +21,7 @@
                         </div>
                           <template v-if="$v.password.$error">
                              <div class="errorMessage" v-if="!$v.password.required">Password is required!</div>
-                             <div class="errorMessage" v-else-if="!$v.password.minLength">Password must be longer than 6 symbols!</div>
+                             <div class="errorMessage" v-else-if="!$v.password.minLength">Password must at least 6 symbols!</div>
                           </template>
 
                         <button>Login</button>
