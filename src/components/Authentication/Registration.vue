@@ -2,7 +2,7 @@
 <section class="content-info">
 
                     <h2 class="user-links">
-                        <label for="register">Register</label>
+                        <label for="registration">Registration</label>
                     </h2>
 
                     <form class="user-form" @submit.prevent="submitHandler">

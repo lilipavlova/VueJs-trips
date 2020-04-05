@@ -3,32 +3,34 @@
 <div class="navigation">
                 <ul>
                     <li>
-                        <a href="#">Home</a>
+                        <router-link to="/home">Home</router-link >
                     </li>
                     <li>
-                        <a href="#">All trips</a>
+                        <router-link to="/">All trips</router-link>
                     </li>
                     <li>
-                        <a href="#">Suggest trip</a>
+                        <router-link to="/create-trip">Suggest trip</router-link>
                     </li>
                     <li>
-                        <a href="#">Your wish list</a>
+                        <router-link to="/">Your wish list</router-link>
                     </li>
  
                 </ul>
 
                 <ul>
                     <li>
-                        <a href="#">Login</a>
+                        <router-link to="/login">Login</router-link>
                     </li>
                     <li>
-                        <a href="#">Registration</a>
+                        <router-link to="/registration">Register</router-link>
                     </li>
                     <li>
-                        <a href="#">Logout</a>
+                        <router-link to="/">Logout</router-link>
                     </li>
                 </ul>
             </div>
+
+            
 </div>
 </template>
 

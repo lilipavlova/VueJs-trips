@@ -3,11 +3,8 @@
 
     <div class="main">
      <app-navigation></app-navigation>
-  
-    <!-- <app-home></app-home>
-    <app-login></app-login> -->
-    <!-- <app-registration></app-registration> -->
-    <app-createTrip></app-createTrip>
+     <router-view></router-view>
+
     </div>
 
     <app-footer></app-footer>
@@ -15,28 +12,18 @@
 </template>
 
 <script>
-import tutorials from "./tutorials.json"
-
-// import AppHome from './components/Home'
 import AppFooter from './components/core/Footer'
 import AppNavigation from "./components/core/Navigation"
-// import AppLogin from "./components/Authentication/Login"
-// import AppRegistration from "./components/Authentication/Registration"
-import AppCreateTrip from "./components/trips/create-trip"
 
 export default {
   name: 'App',
   components: {
-    // AppHome,
     AppFooter,
     AppNavigation,
-    // AppLogin,
-    // AppRegistration
-    AppCreateTrip
   },
   data(){
     return {
-      tutorials
+      
     };
   } 
 }
