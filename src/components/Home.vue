@@ -1,7 +1,7 @@
 <template>
 <div > 
     <section class="home">
-            <h1>Register and win !</h1>
+            <h1>Register and win!</h1>
             <button>LEARN MORE</button>
     </section>
 </div>
@@ -9,8 +9,7 @@
 
 <script>
 export default {
-    components: {
-    }
+    name: "home"
 }
 </script>
 

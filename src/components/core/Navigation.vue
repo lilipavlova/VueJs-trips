@@ -3,7 +3,7 @@
 <div class="navigation">
                 <ul>
                     <li>
-                        <router-link to="/home">Home</router-link >
+                        <router-link to="/">Home</router-link >
                     </li>
                     <li>
                         <router-link to="/">All trips</router-link>
@@ -12,7 +12,7 @@
                         <router-link to="/create-trip">Suggest trip</router-link>
                     </li>
                     <li>
-                        <router-link to="/">Your wish list</router-link>
+                        <router-link to="/">Wish list</router-link>
                     </li>
  
                 </ul>

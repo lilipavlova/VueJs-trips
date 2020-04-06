@@ -15,11 +15,12 @@
 import AppFooter from './components/core/Footer'
 import AppNavigation from "./components/core/Navigation"
 
+
 export default {
   name: 'App',
   components: {
     AppFooter,
-    AppNavigation,
+    AppNavigation
   },
   data(){
     return {
