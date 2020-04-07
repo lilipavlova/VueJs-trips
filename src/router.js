@@ -7,6 +7,7 @@ import AppLogin from "./components/Authentication/Login"
 import AppRegistration from "./components/Authentication/Registration"
 import AppListTrips from "./components/trips/List-trips"
 import AppCreateTrip from "./components/trips/Create-trip"
+import AppListWishes from "./components/trips/List-wishes"
 import AppNotFound from "./components/core/Not-found"
 
 Vue.use(VueRouter);
@@ -25,7 +26,8 @@ const routes =  [
    { path: "/login", name: "login" , component: AppLogin , beforeEnter: anonymousGuard},
    { path: "/registration", name: "registration", component: AppRegistration , beforeEnter: anonymousGuard},
    { path: "/list-trips", name: "list-trips" , component: AppListTrips},
-   { path: "/create-trip", name: "create-trip" , component: AppCreateTrip},
+   { path: "/create-trip", name: "create-trip", component: AppCreateTrip },
+   { path: "/list-wishes", name: "list-wishes" , component: AppListWishes},
    { path: "*", name: "not-found" , component: AppNotFound }
 ]
 

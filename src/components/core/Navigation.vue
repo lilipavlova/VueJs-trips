@@ -6,13 +6,13 @@
                         <router-link to="/">Home</router-link >
                     </li>
                     <li v-if="isAuth">
-                        <router-link to="/list-trips">All trips</router-link>
+                        <router-link to="/list-trips">All wishes</router-link>
                     </li>
                     <li v-if="isAuth">
                         <router-link to="/create-trip">Make a wish</router-link>
                     </li>
                     <li v-if="isAuth">
-                        <router-link to="/">Wish list</router-link>
+                        <router-link to="/list-wishes">Your Wish list</router-link>
                     </li>
  
                 </ul>

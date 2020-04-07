@@ -2,7 +2,7 @@
 <section class="content-info">
 
                     <h2 class="user-links">
-                        <label for="create-trip">Trip Info</label>
+                        <label for="create-trip">Wish Info</label>
                     </h2>
 
                     <form class="user-form" @submit.prevent="submitHandler">
@@ -67,7 +67,7 @@ export default {
         let data = {
             destination: this.destination,
             imageUrl: this.imageUrl,
-            description: this.destination,
+            description: this.description,
             organizer: JSON.parse(getData('userInfo')).username
         };
 
