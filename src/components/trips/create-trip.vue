@@ -38,6 +38,8 @@
 <script>
 import { validationMixin } from 'vuelidate';
 import { required } from 'vuelidate/lib/validators';
+import { post } from '../../requester';
+import { getData } from '../../storage';
 
 export default {
    name: "create-trip" ,
@@ -62,9 +64,19 @@ export default {
    },
     methods: {
     submitHandler() {
-      this.$v.$touch();
-      if (this.$v.$invalid) { return; }
-      console.log('Form was submitted!');
+        let data = {
+            destination: this.destination,
+            imageUrl: this.imageUrl,
+            description: this.destination,
+            organizer: JSON.parse(getData('userInfo')).username
+        };
+
+			post( 'appdata', 'trips', data , 'Kinvey')
+				.then(() => {
+					this.$router.push("/list-trips");
+				})
+				.catch(console.error);
+		
     }
 }
 }
