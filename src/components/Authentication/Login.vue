@@ -5,10 +5,10 @@
                         <label for="login">Login</label>
                     </h2>
 
-                    <form class="user-form" @submit.prevent="submitHandler">
+                    <form class="user-form" @submit.prevent="onLogin">
                         <div class="form-group">
-                            <img src="https://img.icons8.com/material-sharp/42/000000/user.png">
-                            <input type="text" name="username" placeholder="Username" v-model="email" @blur="$v.email.$touch">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" placeholder="Your email..." v-model="email" @blur="$v.email.$touch">
                         </div>
                          <template v-if="$v.email.$error">
                              <div class="errorMessage" v-if="!$v.email.required">Email is required!</div>
@@ -16,8 +16,8 @@
                          </template>
 
                         <div class="form-group">
-                            <img src="https://img.icons8.com/material/42/000000/password--v1.png">
-                            <input type="password" name="password" placeholder="Password" v-model="password" @blur="$v.password.$touch">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" placeholder="Your password..." v-model="password" @blur="$v.password.$touch">
                         </div>
                           <template v-if="$v.password.$error">
                              <div class="errorMessage" v-if="!$v.password.required">Password is required!</div>
@@ -25,6 +25,10 @@
                           </template>
 
                         <button>Login</button>
+                                <p class="text-center">
+                                  Dont' have an account?
+                                <router-link to="/registration">Register</router-link>
+                                </p>
                     </form>
                 </section>
 </template>
@@ -33,11 +37,14 @@
 <script>
 import { validationMixin } from 'vuelidate';
 import { required, minLength, email } from 'vuelidate/lib/validators';
+import { post } from '../../requester';
+import { saveUser } from '../../storage';
+
 
 export default {
     name: "login",
     mixins: [validationMixin],
-    data() {
+    data: function() {
         return {
             email: '',
             password: ''
@@ -54,12 +61,18 @@ export default {
       }
     },
     methods: {
-    submitHandler() {
-      this.$v.$touch();
-      if (this.$v.$invalid) { return; }
-      console.log('Form was submitted!');
+    onLogin() {
+        const data = { username: this.email, password: this.password };
+        
+		post('user', 'login', data , 'Basic')
+			.then((data) => {
+                saveUser(data);
+                this.$emit('onAuth', true);
+                this.$router.push("/list-trips");
+			})
+			.catch(console.error);
     }
-}
+  }
 }
 </script>
 

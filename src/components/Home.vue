@@ -4,12 +4,25 @@
             <h1>Register and win!</h1>
             <button>LEARN MORE</button>
     </section>
+   
 </div>
+
+   
 </template>
 
 <script>
+
+
 export default {
-    name: "home"
+
+
+    name: "home",
+    props: {
+        isAuth: Boolean
+    }
+
+
+
 }
 </script>
 

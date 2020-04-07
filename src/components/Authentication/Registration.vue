@@ -5,19 +5,20 @@
                         <label for="registration">Registration</label>
                     </h2>
 
-                    <form class="user-form" @submit.prevent="submitHandler">
-                        <div class="form-group">
-                            <img src="https://img.icons8.com/material-sharp/42/000000/user.png">
-                            <input type="text" name="username" placeholder="Username" v-model="username" @blur="$v.username.$touch">
-                        </div>
-                    <template v-if="$v.username.$error">
-                        <div class="errorMessage" v-if="!$v.username.required">Username is required!</div>
-                        <div class="errorMessage" v-if="!$v.username.minLength">Username should be more than 6 symboils!</div>
-                    </template>                       
+                    <form class="user-form" @submit.prevent="onRegister">
 
                         <div class="form-group">
-                            <img src="https://img.icons8.com/material/42/000000/password--v1.png">
-                            <input type="password" name="password" placeholder="Password" v-model="password" @blur="$v.password.$touch">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" placeholder="Your email..." v-model="email" @blur="$v.email.$touch">
+                        </div>
+                         <template v-if="$v.email.$error">
+                             <div class="errorMessage" v-if="!$v.email.required">Email is required!</div>
+                             <div class="errorMessage" v-else-if="!$v.email.email">Invalid email!</div>
+                         </template>               
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" placeholder="Your Password..." v-model="password" @blur="$v.password.$touch">
                         </div>
                               <template v-if="$v.password.$error">
                                 <div class="errorMessage" v-if="!$v.password.required">Password is required!</div>
@@ -25,36 +26,42 @@
                               </template>
 
                         <div class="form-group">
-                            <img src="https://img.icons8.com/material/42/000000/password--v1.png">
-                            <input type="password" name="rePassword" placeholder="Repeat password" v-model="rePassword" @blur="$v.rePassword.$touch">
+                            <label for="rePassword">Repeat Password</label>
+                            <input type="password" name="rePassword" placeholder="Repeat password..." v-model="rePassword" @blur="$v.rePassword.$touch">
                         </div>
                               <template v-if="$v.rePassword.$error">
                                 <div class="errorMessage" v-if="!$v.rePassword.sameAs">Passwords don't match!</div>
                               </template>
 
                         <button>Register</button>
+                                <p class="text-center">
+                                    Have an account?
+                               <router-link to="/login">Log in</router-link>
+                                </p>
                     </form>
                 </section>
 </template>
 
 <script>
 import { validationMixin } from 'vuelidate';
-import { required, minLength, sameAs } from 'vuelidate/lib/validators';
+import { required, email, minLength, sameAs } from 'vuelidate/lib/validators';
+import { post } from '../../requester';
+import { saveUser } from '../../storage';
 
 export default {
-    name: "registration",
+   name: "registration",
    mixins: [validationMixin],
    data(){
        return {
-        username: '',
+        email: '',
         password: '',
         rePassword: ''
        }
    },
    validations: {
-       username: {
+    email: {
        required,
-       minLength: minLength(6)
+       email
     },
     password: {
       required,
@@ -65,12 +72,22 @@ export default {
     }
    },
     methods: {
-    submitHandler() {
-      this.$v.$touch();
-      if (this.$v.$invalid) { return; }
-      console.log('Form was submitted!');
+    onRegister() {
+      let data = {
+        username: this.email,
+        password: this.password
+        };
+        
+        post('user', '', data, 'Basic')
+			.then((data) => {
+        saveUser(data);
+        this.$emit('onAuth', true);
+				this.$router.push("/list-trips");
+			})
+      .catch(console.error);
+   
     }
-}
+  }
 }
 </script>
 

@@ -1,34 +1,36 @@
 <template>
 <div> 
-<div class="navigation">
+<div class="navigation" >
                 <ul>
                     <li>
                         <router-link to="/">Home</router-link >
                     </li>
-                    <li>
-                        <router-link to="/">All trips</router-link>
+                    <li v-if="isAuth">
+                        <router-link to="/list-trips">All trips</router-link>
                     </li>
-                    <li>
+                    <li v-if="isAuth">
                         <router-link to="/create-trip">Suggest trip</router-link>
                     </li>
-                    <li>
+                    <li v-if="isAuth">
                         <router-link to="/">Wish list</router-link>
                     </li>
  
                 </ul>
 
                 <ul>
-                    <li>
+                    <li v-if="!isAuth">
                         <router-link to="/login">Login</router-link>
                     </li>
-                    <li>
+                    <li v-if="!isAuth">
                         <router-link to="/registration">Register</router-link>
                     </li>
-                    <li>
-                        <router-link to="/">Logout</router-link>
+                    <li >
+                        <a @click="onLogout" class="logout">Logout</a>
                     </li>
                 </ul>
             </div>
+
+          
 
             
 </div>
@@ -37,13 +39,30 @@
 
 
 <script>
+
+
 export default {
+  name: "navigation",
+   props: {
+    isAuth: Boolean
+  },
+
+  methods: {
+    onLogout() {
+        localStorage.clear();
+        this.$emit('onAuth', false);
+        this.$router.push("/");
+        },
+   }
+
 }
 </script>
 
 
 
 <style scoped>
+.logout {
+    cursor: pointer;
+}
 </style>
-
 

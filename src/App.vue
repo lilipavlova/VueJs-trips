@@ -2,8 +2,8 @@
   <div id="app">
 
     <div class="main">
-     <app-navigation></app-navigation>
-     <router-view></router-view>
+     <app-navigation  @onAuth="isAuth = $event" :isAuth="isAuth"></app-navigation>
+     <router-view @onAuth="isAuth = $event" :isAuth="isAuth"></router-view>
 
     </div>
 
@@ -14,19 +14,20 @@
 <script>
 import AppFooter from './components/core/Footer'
 import AppNavigation from "./components/core/Navigation"
-
+import { appKey } from './storage';
 
 export default {
   name: 'App',
-  components: {
-    AppFooter,
-    AppNavigation
-  },
-  data(){
+  data: function(){
     return {
-      
+       isAuth: localStorage.getItem('authToken' + appKey) !== null
     };
-  } 
+  },
+  components: {
+    AppNavigation,
+    AppFooter
+  }
+
 }
 </script>
 
