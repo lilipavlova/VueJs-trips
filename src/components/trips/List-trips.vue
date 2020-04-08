@@ -3,8 +3,8 @@
 
                     <h2 class="user-links">
                         <label for="list-trips">All wished vacations so far ... </label>
-                        
                     </h2>
+                     <router-link to="/create-trip">Make your wish here.</router-link>
 
                         <div class="form-group" v-for="t in trips" :key="t.destination">
                             <p>{{t.destination}}</p>
@@ -35,3 +35,20 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+section div {
+    display: inline-block;
+    padding: 10px;
+}
+
+section {
+    padding-bottom: 100px;
+}
+
+
+p:first-of-type {
+    font-weight: bold;
+}
+</style>

@@ -82,7 +82,7 @@ export default {
 			.then((data) => {
         saveUser(data);
         this.$emit('onAuth', true);
-				this.$router.push("/list-trips");
+				this.$router.push("/");
 			})
       .catch(console.error);
    

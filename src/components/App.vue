@@ -56,7 +56,7 @@ footer {
     display: flex;
     position:fixed;
     left:0;
-     width:100%;
+    width:100%;
      
 }
 
@@ -64,55 +64,11 @@ footer div {
   display: contents;
 }
 
-footer .section-header {
-    border-bottom: 3px solid #303440;
-    margin: 1rem;
-    color: white;
-}
-
-footer span {
-    background: #303440;
-    color: white;
-    font-size: 26px;
-    border-radius: 6px 6px 0 0;
-    padding: 3px 17px;
-}
-
-footer section {
-    width: 20%;
-    display: inline-block;
-    margin: 0.5em auto;
-    vertical-align: top;
-}
-
-footer a {
-    text-decoration: none;
-    color: white;
-}
-
 footer div section {
     display: inline-block;
     vertical-align: top;
-}
-
-footer div section {
-    width: 20%;
+     width: 20%;
     text-align: right;
-}
-
-footer div .social-icons a {
-    font-size: 26px;
-    margin: 0.3em;
-    padding: 10px;
-}
-
-footer .svg-inline--fa {
-    overflow: visible;
-    width: 1em;
-    display: inline-block;
-    font-size: inherit;
-    height: 1em;
-    vertical-align: -0.125em;
 }
 
 /** ************************************** **/

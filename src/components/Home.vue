@@ -1,8 +1,21 @@
 <template>
 <div > 
     <section class="home">
-            <h1>Register and win!</h1>
-            <button>LEARN MORE</button>
+            <h1>Win your dream holiday!</h1>
+            
+    </section>
+    <section v-if="!isAuth" class="description">
+             <h3> What is this?</h3>
+             <p> Due to the current worlwide situation we decided to give away one free vacation to a destination chosen by you!</p>
+             <p > All you need to do is <router-link to="/login">Login</router-link> / <router-link to="/registration">Register</router-link> , make your wishes and in the end of the month we will randomly choose the lucky one!</p>
+             <p> Good luck! </p>
+    </section>
+
+        <section v-if="isAuth" class="description">
+             <h3> Ok, what's next?</h3>
+             <p> You are almost there... Make your wish <router-link to="/create-trip"> here.</router-link> </p>
+             <p> Or if you don't have an idea, check what the other people's wishes <router-link to="/list-trips"> here.</router-link></p>
+             <p> :)))) </p>
     </section>
    
 </div>
@@ -14,8 +27,6 @@
 
 
 export default {
-
-
     name: "home",
     props: {
         isAuth: Boolean
@@ -38,23 +49,15 @@ export default {
 
 .home h1 {
     margin: 0;
-    padding: 200px 0px 0px 100px;
+    padding: 200px 0px 200px 100px;;
     font-size: 50px;
     color: white;
     width: 30%;
 }
 
-.home button {
-    font-size: 20px;
-    background: transparent;
-    border: 2px white solid;
-    color: white;
-    padding: 5px 10px;
-    margin: 50px 200px 200px 100px;
+
+.description {
+    padding-bottom: 250px;
 }
 
-.home button:hover{
-    background: #50b9e1;
-    border: 2px #50b9e1 solid;
-}
 </style>

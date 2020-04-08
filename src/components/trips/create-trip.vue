@@ -73,7 +73,7 @@ export default {
 
 			post( 'appdata', 'trips', data , 'Kinvey')
 				.then(() => {
-					this.$router.push("/list-trips");
+					this.$router.push("/list-wishes");
 				})
 				.catch(console.error);
 		
