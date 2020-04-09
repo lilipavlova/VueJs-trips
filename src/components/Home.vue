@@ -14,7 +14,7 @@
         <section v-if="isAuth" class="description">
              <h3> Ok, what's next?</h3>
              <p> You are almost there... Make your wish <router-link to="/create-trip"> here.</router-link> </p>
-             <p> Or if you don't have an idea, check what the other people's wishes <router-link to="/list-trips"> here.</router-link></p>
+             <p> Or if you don't have an idea, check what the other people wish for <router-link to="/list-trips"> here.</router-link></p>
              <p> :)))) </p>
     </section>
    
@@ -49,7 +49,7 @@ export default {
 
 .home h1 {
     margin: 0;
-    padding: 200px 0px 200px 100px;;
+    padding: 200px 0px 300px 100px;
     font-size: 50px;
     color: white;
     width: 30%;
