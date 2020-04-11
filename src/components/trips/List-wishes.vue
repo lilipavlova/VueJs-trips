@@ -13,7 +13,7 @@
 
                      <div class="form-group" v-for="myt in myTrips" :key="myt.destination">
                             <p>{{myt.destination}}</p>
-                            <img :src="myt.imageUrl" />
+                            <img class="image" :src="myt.imageUrl" />
                             <p>{{myt.description}}</p>
                      </div>
 
@@ -70,4 +70,10 @@ section {
 p:first-of-type {
     font-weight: bold;
 }
+
+.image {
+    width: 300px;
+    height: 200px;
+}
+
 </style>

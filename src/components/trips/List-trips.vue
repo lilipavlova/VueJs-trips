@@ -8,7 +8,7 @@
 
                         <div class="form-group" v-for="t in trips" :key="t.destination">
                             <p>{{t.destination}}</p>
-                            <img :src="t.imageUrl" />
+                            <img class="image" :src="t.imageUrl" />
                             <p>{{t.description}}</p>
                         </div>
    
@@ -51,4 +51,10 @@ section {
 p:first-of-type {
     font-weight: bold;
 }
+
+.image {
+    width: 300px;
+    height: 200px;
+}
+
 </style>
