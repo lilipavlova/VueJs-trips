@@ -1,24 +1,10 @@
-# first-vuejs-project
+- Softuni Vue.js exam defence
 
-## Project setup
-```
-npm install
-```
+- Frontend: Vue.js
+- Backend: Kinvey 
+- Database: Kinvey MongoDb
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Project setup: npm install
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Compiles the project: npm run serve
